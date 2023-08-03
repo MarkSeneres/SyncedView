@@ -1,4 +1,4 @@
-.App {
+.Form {
   text-align: center;
   display: flex;
   min-height: 100vh;
@@ -21,10 +21,15 @@
   }
 }
 
+.login-color {
+  color: white;
+}
+
 
 label {
   text-align: left;
   padding: 0.20rem 0;
+  color: white;
 }
 
 input {  
@@ -36,15 +41,16 @@ input {
 .login-btn {
   margin: 0.5rem 0;
   border: none;
-  padding: 20px;
+  padding: 15px;
   background-color: white;
   border-radius: 10px;
   cursor: pointer;
+  color:  #ae8fe4;
 }
 
 .Link-btn {
   background: none;
   color: white;
-  text-decoration: underline;
+  text-decoration: none;
   border: none;
 }

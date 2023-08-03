@@ -15,7 +15,7 @@ function Register(props) {
     <> 
       
        <div className="auth-form-container">
-       <h2>Register</h2>
+       <h2 className="login-color">Register</h2>
           <form className="register-form" onSubmit={handleSubmit}>
               <label>Full name</label>
               <input value={name} onChange={(e) => setName(e.target.value)} name="name" id="name" placeholder="full Name" />
