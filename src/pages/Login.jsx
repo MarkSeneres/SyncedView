@@ -1,31 +1,26 @@
 import { useState } from "react"
+import LoginAsUser from "../component/LogInAsUser";
+import Register from "../component/Register";
+import "../css/Form.css"
 
-function Login(props) {
-  const [email, setEmail] = useState('');
-  const [pass, SetPass] = useState ('');
 
-  const handleSubmit = (e) => {
-    e.perventDefault();
-    console.log(email);
+function Login() {
+    const [currentForm, setCurrentForm] = useState('login');
 
-  }
+    const toggleForm = (formName) => {
+        setCurrentForm(formName);
+    }
+    return (
+        <>
+            <div className="Form">
+                {
+                    currentForm === "login" ? <LoginAsUser onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
 
-  return (
-      <>
-       
-        <div className="auth-form-container">
-        <h2 className="login-color">Login</h2>
-          <form className="login-form" onSubmit={handleSubmit}>
-              <label htmlFor="email">Email</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-              <label htmlFor="password">Password</label>
-              <input value={pass} onChange={(e) => SetPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
-              <button className="login-btn" type="submit">Log In</button>
-          </form>
-          <button className="Link-btn" onClick={() => props.onFormSwitch('register')}>Don't have a acount? Register here.</button>
-        </div>
-      </>
-  )
+                }
+            </div>
+
+        </>
+    )
 }
 
 export default Login

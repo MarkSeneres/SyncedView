@@ -10,8 +10,13 @@ function AdminDashboard() {
         const rooms = [];
 
         for (let i = 1; i <= totalRooms; i++) {
-            const roomNumber = `10${i < 10 ? "0" + i : i}`;
-            const availability = true; 
+            let roomNumber;
+            if (i < 10) {
+                roomNumber = "100" + i;
+            } else {
+                roomNumber = "10" + i;
+            }
+            const availability = true;
             rooms.push({
                 id: i,
                 roomNumber,
@@ -27,7 +32,7 @@ function AdminDashboard() {
 
     return (
         <>
-            <div style={{color: "white"}}>
+            <div style={{ color: "white" }}>
                 <RoomMonitoring rooms={rooms} />
             </div>
         </>
